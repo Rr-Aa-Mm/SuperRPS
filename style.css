@@ -265,6 +265,11 @@ button {
   flex-direction: column;
 }
 
+#titleLine {
+  font-family: "Lobster";
+  font-size: 400%;
+}
+
 #weaponsDiv {
   display: flex;
   flex-direction: row;
@@ -302,8 +307,10 @@ button {
 }
 
 #bottomBanner {
-  color: black;
+  color: purple;
   text-align: center;
+  font-family: "Lobster";
+  font-size: 200%;
 }
 
 @keyframes wiggle {
