@@ -268,11 +268,13 @@ button {
 #titleLine {
   font-family: "Lobster";
   font-size: 400%;
+  color: hotpink;
 }
 
 #weaponsDiv {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .divRow {
@@ -305,6 +307,19 @@ button {
   display: inline-block;
   animation: wiggle 1s infinite;
 }
+
+.gemstone:Hover {
+  animation-play-state: paused;
+}
+
+.gemstoneBulge {
+  transition: all .15s ease-in-out;
+}
+
+.gemstoneBulge:hover {
+  transform: scale(1.5);
+}
+
 
 #bottomBanner {
   color: purple;
