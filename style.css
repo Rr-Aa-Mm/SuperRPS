@@ -85,12 +85,6 @@ button {
   align-items: center;
 }
 
-.turtleDiv {
-  display: flex;
-  flex-direction: row;
-}
-
-
 .section--1 {
   background-color: var(--bg-dark);
   padding-block: var(--space-2) var(--space-4);
@@ -259,4 +253,79 @@ button {
 
 .twilight {
   background-color: #39CCCC;
+}
+
+#mainDiv {
+  background: url("./Art/twilightGradient.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+#weaponsDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.divRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.titleDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 40px;
+}
+
+.whale {
+  max-width: 400px;
+}
+
+.divSpacer {
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+}
+
+.gemstone {
+  max-width: 200px;
+  margin: auto;
+  padding: 5% 0;
+  display: inline-block;
+  animation: wiggle 1s infinite;
+}
+
+#bottomBanner {
+  color: black;
+  text-align: center;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+ 80% { transform: rotate(0deg); }
+ 85% { transform: rotate(5deg); }
+ 95% { transform: rotate(-5deg); }
+100% { transform: rotate(0deg); }
+10%, 90% {
+  transform: translate3d(-1px, 0, 0);
+}
+
+20%, 80% {
+  transform: translate3d(2px, 0, 0);
+}
+
+30%, 50%, 70% {
+  transform: translate3d(-4px, 0, 0);
+}
+
+40%, 60% {
+  transform: translate3d(4px, 0, 0);
+}
+
 }
