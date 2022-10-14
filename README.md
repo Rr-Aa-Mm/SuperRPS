@@ -1,1 +1,1 @@
-# SuperRPS
+# rock-paper-scissors
