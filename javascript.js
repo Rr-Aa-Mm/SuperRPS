@@ -1,5 +1,6 @@
 let computerChoice = "";
 let playerChoice = "";
+let gem=""
 
 function getComputerChoice() {
     let computerNum = Math.floor(Math.random() * 3);
@@ -50,5 +51,18 @@ function commenceBattle() {
     getComputerChoice();
     battleRoyale(playerChoice);       
 }
+
+function pyroxineClicked() {
+    alert("You clicked pyroxine!")
+}
+
+function garnetClicked() {
+    alert("You clicked garnet!")
+}
+
+function olivineClicked() {
+    alert("You clicked olivine!")
+}
+
 
 

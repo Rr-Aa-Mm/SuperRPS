@@ -23,22 +23,32 @@
   
   <body>
     <div id="mainDiv">
-      <div class="titleDiv">
-        <h1 id="titleLine">Gemstones, Whale, Moon</h1>
+      <div id="titleDivRow">
+        <div class="titleDiv">
+          <h1 id="titleLine">Gemstones, Whale, Moon</h1>
+          <h5 id="titleTagline">This whale is an asshole. Throw a gem at him to appease the Moon God.</h5>
+        </div>
       </div>
-      <div class="divSpacer"></div>
       <div class="divRow">
-        <img class="whale" src="./Art/whale.gif" alt="">
+        <img id="moon" class="flex-item" src="./Art/moon_glow.png" alt="">
       </div>
-      <div id="weaponsDiv">
-        <div class="gemstoneBulge">
-          <img src="./Art/pyroxine_gem.png" alt="" class="gemstone">
+      <div class="divWhale">
+        <div id="whale_swimming">
+          <img class="whale" src="./Art/whale.gif" alt="">
+        </div>     
+        <div id="whale_screaming">
+          <img class="whale" src="./Art/whale_scream.gif" alt="">
+        </div id="whale_screaming">
+      </div>
+      <div id="divGems">
+        <div class="gemstoneBulge flex-item" onclick="pyroxineClicked()">
+          <img src="./Art/pyroxine_gem.png" alt="" class="gemstone flex-item">
         </div>
-        <div class="gemstoneBulge">
-          <img src="./Art/garnet_gem.png" alt="" class="gemstone">
+        <div class="gemstoneBulge flex-item" onclick="garnetClicked()">
+          <img src="./Art/garnet_gem.png" alt="" class="gemstone flex-item">
         </div>
-        <div class="gemstoneBulge">
-          <img src="./Art/olivine_gem.png" alt="" class="gemstone">
+        <div class="gemstoneBulge flex-item" onclick="garnetClicked()">
+          <img src="./Art/olivine_gem.png" alt="" class="gemstone flex-item">
         </div>
       </div>
       <div class="divSpacer"></div>
