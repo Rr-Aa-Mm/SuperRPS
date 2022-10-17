@@ -1,68 +1,126 @@
 let computerChoice = "";
 let playerChoice = "";
-let gem=""
+let gem = "";
+let roundStatus = "";
+
+
 
 function getComputerChoice() {
-    let computerNum = Math.floor(Math.random() * 3);
+    let computerNum = Math.floor(Math.random() * 2);
     if (computerNum === 0) {
         computerChoice = "Rocks";
+        drawRock();
     } else if (computerNum === 1) {
-        computerChoice = "Paper";   
+        computerChoice = "Paper";
+        drawPaper();   
     } else {
         computerChoice = "Scissors";
+        drawScissors();
     };
-    alert("RobotChoice: " + computerChoice);
 }
 
 function battleRoyale() {
-    alert("Your Choice: " + playerChoice);
     if (computerChoice == "Rocks") {
         if (playerChoice == "Rocks") {
-            alert("playerChoice is " + playerChoice + " ...This was selected!");
-            alert("TIE! Robot: Rocks, You: Rocks");
+            roundStatus = "TIE";
         } else if (playerChoice == "Paper") {
-            alert("YOU WIN! Robot: Rocks, You: Paper")
+            roundStatus = "WIN";
         } else if (playerChoice == "Scissors") {
-            alert("ROBOT WINS! Robot: Rocks, You: Scissors")
+            roundStatus = "LOSE";
         }
     } else if (computerChoice == "Paper") {
         if (playerChoice == "Rocks") {
-            alert("ROBOT WINS! Robot: Paper, You: Rocks");
+            roundStatus = "LOSE";
         } else if (playerChoice == "Paper") {
-            alert("TIE! Robot: Paper, You: Paper")
+            roundStatus = "TIE";
         } else if (playerChoice == "Scissors") {
-            alert("YOU WIN! Robot: Paper, You: Scissors")
+            roundStatus = "WIN";
         }
     } else if (computerChoice == "Scissors") {
         if (playerChoice == "Rocks") {
-            alert("YOU WIN! Robot: Scissors, You: Rocks");
+            roundStatus = "WIN";
         } else if (playerChoice == "Paper") {
-            alert("ROBOT WINS! Robot: Scissors, You: Paper")
+            roundStatus = "LOSE";
         } else if (playerChoice == "Scissors") {
-            alert("TIE! Robot: Scissors, You: Scissors")
+            roundStatus = "TIE";
         }
-    }
-}
-
-function commenceBattle() {
-    let activeChoice = document.getElementById("mySelector").value;
-    alert("OK, you've chosen " + activeChoice + "... hold your breath!");
-    playerChoice = activeChoice;
-    getComputerChoice();
-    battleRoyale(playerChoice);       
+    };
+    callIt();
+    setTimeout(
+        function() {
+        resetInvisibility();
+    }, 1000);
 }
 
 function pyroxineClicked() {
-    alert("You clicked pyroxine!")
+    playerChoice  = "Rocks";
+    getComputerChoice();
+    battleRoyale(playerChoice); 
 }
 
 function garnetClicked() {
-    alert("You clicked garnet!")
+    playerChoice  = "Paper";
+    getComputerChoice();
+    battleRoyale(playerChoice); 
 }
 
 function olivineClicked() {
-    alert("You clicked olivine!")
+    playerChoice  = "Scissors";
+    getComputerChoice();
+    battleRoyale(playerChoice); 
+}
+
+function drawRock() {
+    var element = document.getElementById("whaleRock");
+    element.style.opacity = "1";
+}
+
+function drawPaper() {
+    var element = document.getElementById("whalePaper");
+    element.style.opacity = "1";
+}
+
+function drawScissors() {
+    var element = document.getElementById("whaleScissors");
+    element.style.opacity = "1";
+}
+
+function resetInvisibility() {
+    let invisibles = document.querySelectorAll('.invisible');
+
+    invisibles.forEach(invisible => {
+        invisible.style.opacity = "0";
+    });
 }
 
 
+function callIt() {
+    if (roundStatus === "TIE") {     
+        let ties = document.querySelectorAll('.tie');
+        ties.forEach(tie => {
+            tie.style.opacity = "1";
+        });  
+    } else if (roundStatus === "WIN") {
+        var myScore = document.getElementById("myScoreHTML");
+        var number = myScore.innerHTML;
+        number++;
+        myScore.innerHTML = number;   
 
+        myScore++;
+        let wins = document.querySelectorAll('.win');
+        wins.forEach(win => {
+            win.style.opacity = "1";
+        });        
+
+    } else {
+        var whaleScore = document.getElementById("whaleScoreHTML");
+        var number = whaleScore.innerHTML;
+        number++;
+        whaleScore.innerHTML = number;   
+
+        let losses = document.querySelectorAll('.lose');
+        losses.forEach(lose => {
+            lose.style.opacity = "1";
+        });     
+    };
+} 

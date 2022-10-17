@@ -19,6 +19,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet"/>
+    <link href="http://fonts.cdnfonts.com/css/60s-scoreboard" rel="stylesheet">
+                
   </head>
   
   <body>
@@ -26,31 +28,85 @@
       <div id="titleDivRow">
         <div class="titleDiv">
           <h1 id="titleLine">Gemstones, Whale, Moon</h1>
-          <h5 id="titleTagline">This whale is an asshole. Throw a gem at him to appease the Moon God.</h5>
+          <h5 id="titleTagline">Use your gems to defeat this Lunar Whale Goddess!</h5>
+          <div id="counter" class="row flex">
+            <div class="flex row">
+              <h1>YOUR SCORE: </h1>
+              <h1 id="myScoreHTML">0</h1>
+            </div>
+            <div><h1 class="invisible">SPACER</h1></div>
+            <div class="flex row">
+              <h1>WHALE GODDESS SCORE: </h1>
+              <h1 id="whaleScoreHTML">0</h1>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="divRow">
-        <img id="moon" class="flex-item" src="./Art/moon_glow.png" alt="">
+
+
+      <div class="row flex center">
+
+        <div class="center scoreboard flex10">
+          <h1 class="win invisible center">WIN!</h1>
+          <h1 class="lose invisible center">LOSE!</h1>
+          <h1 class="tie invisible center">TIE!</h1>
+        </div>
+        <div>
+          
+          <div class="center" id="divWhaleGems">
+            <img id="moon" class="flex-item whaleMoon" src="./Art/moon_glow.png" alt="">
+            <div id="whaleRock" class="whaleGem flex-item column invisible" onclick="pyroxineClicked()">
+              <img src="./Art/pyroxine_gem.png" alt="" class="gemstone flex-item">
+              <img src="./Art/hand_rock.png" alt="" class="hand flex-item">
+            </div>
+            <div id="whalePaper" class="whaleGem flex-item column invisible" onclick="garnetClicked()">
+              <img src="./Art/garnet_gem.png" alt="" class="gemstone flex-item">
+              <img src="./Art/hand_paper.png" alt="" class="hand flex-item">
+            </div>
+            <div id="whaleScissors" class="whaleGem flex-item column invisible" onclick="olivineClicked()">
+              <img src="./Art/olivine_gem.png" alt="" class="gemstone flex-item">
+              <img src="./Art/hand_scissors.png" alt="" class="hand flex-item">
+            </div>
+          </div>
+        </div>
+        <div id="scoreboardLights">
+          <h1 class="lose invisible center">LOSE!</h1>
+          <h1 class="win invisible center">WIN!</h1>
+          <h1 class="tie invisible center">TIE!</h1>
+        </div>
+
+        
       </div>
-      <div class="divWhale">
+
+      
+      <div class="divWhale" id="thisWhale">
         <div id="whale_swimming">
           <img class="whale" src="./Art/whale.gif" alt="">
-        </div>     
+        </div>   
         <div id="whale_screaming">
           <img class="whale" src="./Art/whale_scream.gif" alt="">
-        </div id="whale_screaming">
+        </div>
+        <div id="whale_empty"></div>   
       </div>
+
+
+
+
       <div id="divGems">
-        <div class="gemstoneBulge flex-item" onclick="pyroxineClicked()">
+        <div class="gemstoneBulge flex-item column" onclick="pyroxineClicked()">
+          <img src="./Art/hand_rock.png" alt="" class="hand flex-item">
           <img src="./Art/pyroxine_gem.png" alt="" class="gemstone flex-item">
         </div>
-        <div class="gemstoneBulge flex-item" onclick="garnetClicked()">
+        <div class="gemstoneBulge flex-item column" onclick="garnetClicked()">
+          <img src="./Art/hand_paper.png" alt="" class="hand flex-item">
           <img src="./Art/garnet_gem.png" alt="" class="gemstone flex-item">
         </div>
-        <div class="gemstoneBulge flex-item" onclick="garnetClicked()">
+        <div class="gemstoneBulge flex-item column" onclick="olivineClicked()">
+          <img src="./Art/hand_scissors.png" alt="" class="hand flex-item">
           <img src="./Art/olivine_gem.png" alt="" class="gemstone flex-item">
         </div>
       </div>
+
       <div class="divSpacer"></div>
     </div>  
    <h5 id="bottomBanner">© Ram 2022</h5>

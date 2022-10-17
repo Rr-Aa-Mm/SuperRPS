@@ -1,6 +1,58 @@
 /* RAM's GLOBALS */
 
 /* try this property at some point object-fit: contain; */
+#counter {
+  color: #FFBF00;
+  justify-content:center;
+  padding: 20px;
+  font-family: '60s Scoreboard', sans-serif;
+  font-size: 50%;
+                                                
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.invisible {
+  transition: all .5s ease-in-out;
+  opacity: 0;
+}
+
+.flex10 {
+  flex: 10;
+}
+
+.scoreboard {
+  flex-grow: 20;
+  width: max-content;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+  flex: 2 1 auto;
+}
+
+.hand {
+  max-width: 100px;
+  object-fit: contain;
+  display: inline-block;
+  margin:auto;
+  padding: 20px;
+}
 
 #mainDiv {
   background: url("./Art/twilightGradient.png") no-repeat center center fixed;
@@ -26,6 +78,8 @@
 
 .flex-item {
   display: flex;
+  justify-content: center;
+  align-self: auto;
 }
 
 .divSpacer {
@@ -70,6 +124,27 @@
   color: hotpink;
 }
 
+.lose {
+  font-family: '60s Scoreboard', sans-serif;
+  font-size: 400%;
+  color: red;
+  padding: 10px;
+}
+
+.win {
+  font-family: '60s Scoreboard', sans-serif;
+  font-size: 400%;
+  color: white;
+  padding: 10px;
+}
+
+.tie {
+  font-family: '60s Scoreboard', sans-serif;
+  font-size: 400%;
+  color: orange;
+  padding: 10px;
+}
+
 #titleTagline {
   font-family: "Lobster";
   font-size: 150%;
@@ -85,23 +160,51 @@
 /* MOON MOON MOON */
 
 #moon {
-  max-width: 500px;
+  max-width: 300px;
 }
 
 /* WHALE WHALE WHALE WHALE WHALE WHALE WHALE WHALE */
-
-.divWhale {
+ .divWhale {
   height: 20%;
   margin: auto;
-  display: grid; /* USE THIS TO STACK THE WHALES ATOP ONE ANOTHER, CORRESPONDING "grid-column" & "grid-row" specified below, duplicated for each whale. 
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background: url("./Art/whale_scream.gif");
-  background-repeat: no-repeat;
-  background-size: 50% 100%;
-  background-position: center;*/
+  display: grid;
   transition: all .2s ease-in-out;
+}
+
+#divWhaleGems {
+  height: 10%;
+  margin: auto;
+  display: grid; 
+  transition: all .2s ease-in-out;
+  object-fit: contain;
+  place-items: center;
+  transition: all .5s ease-in-out;
+}
+
+#scoreboardLights {
+  height: 10%;
+  margin: auto;
+  display: grid; 
+  transition: all .2s ease-in-out;
+  object-fit: contain;
+  place-items: center;
+  transition: all .5s ease-in-out;
+}
+
+.whaleGem {
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 10%;
+  padding: 1% 0;
+  transition: all .75s ease-in-out;
+}
+
+.whaleMoon {
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 10%;
+  padding: 1% 0;
+  transition: all .75s ease-in-out;
 }
 
 .divWhale:hover {
@@ -109,30 +212,52 @@
 }
 
 #whale_swimming {
+  display: grid;
   grid-column: 1;
   grid-row: 1;
-  opacity: 1;
+  opacity: 0;
   transition: all .15s ease-in-out;
 }
 
 #whale_swimming:hover {
-  opacity: 0;
+  opacity: 1;
 }
 
-#whale_screaming {
-  position: relative;
+.gridBase {
+  max-width: 10%;
+  padding: 5% 0;
+}
+
+
+#whale_empty {
   grid-column: 1;
   grid-row: 1;
   opacity: 0;
   transition: all .15s ease-in-out;
 }
 
-#whale-screaming:hover {
+#whale_screaming {
+  grid-column: 1;
+  grid-row: 1;
   opacity: 1;
+  transition: all .15s ease-in-out;
+}
+
+#whale_screaming:hover {
+  opacity: 0;
 }
 
 .whale {
   max-width: 400px;
+}
+
+#seagull {
+  object-fit: contain;
+}
+
+.divSeagull {
+  max-height: 200px;
+  
 }
 
 
@@ -152,6 +277,7 @@
   display: inline-block;
   animation: wiggle 1s infinite;
   flex: 1;
+  object-fit: contain;
 }
 
 .gemstone:Hover {
@@ -195,27 +321,6 @@
 
 /* INHERITED RULES */
 
-
-:root {
-  --bg-dark: hsla(330, 48.5%, 32%, 1);
-  --txt-dark: hsla(330, 40.2%, 45.9%, 1);
-  --txt-dark-2: hsla(330, 40.2%, 45.9%, 1);
-  --cta: hsla(330, 91.2%, 60%, 1);
-  --txt-light: hsla(330, 93.3%, 94.1%, 1);
-  --txt-grey: hsla(0, 0%, 94.1%, 1);
-}
-
-:root {
-  --fontSize-1: 1rem;
-  --fontSize-2: 1.125rem;
-  --fontSize-3: 1.75rem;
-  --fontSize-4: 2rem;
-  --fontSize-5: 2.25rem;
-  --fontWeight-0: 200;
-  --fontWeight-1: 400;
-  --fontWeight-2: 600;
-}
-
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: var(--txt-grey);
@@ -229,31 +334,6 @@ h3 {
   margin-top: 0;
 }
 
-p {
-  margin-top: 0;
-}
-
-a,
-a:visited,
-a:active {
-  color: inherit;
-  text-decoration: none;
-}
-
-:root {
-  --space-1: 16px;
-  --space-2: 36px;
-  --space-3: 45px;
-  --space-4: 60px;
-  --space-5: 181px;
-  --space-6: 200px;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 100%;
-}
-
 *,
 *::before,
 *::after {
@@ -262,18 +342,7 @@ html {
   padding: 0;
 }
 
-ul {
-  list-style: none;
-}
 
-button {
-  font-family: inherit;
-  color: inherit;
-  border: 0;
-}
 
-.wrapper {
-  max-width: 1110px;
-  margin: auto;
-}
+
 
