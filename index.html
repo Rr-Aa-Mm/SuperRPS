@@ -15,7 +15,7 @@
     <title>GWM</title>
     <link rel="icon" type="image/x-icon" href="/Art/olivine_gem.png">
     <link rel="stylesheet" href="style.css" />
-    <script src="javascript.js"></script>
+   
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet"/>
@@ -93,15 +93,15 @@
 
 
       <div id="divGems">
-        <div class="gemstoneBulge flex-item column" onclick="pyroxineClicked()">
+        <div id="pyroxine" class="gemstoneBulge flex-item column yoink">
           <img src="./Art/hand_rock.png" alt="" class="hand flex-item">
           <img src="./Art/pyroxine_gem.png" alt="" class="gemstone flex-item">
         </div>
-        <div class="gemstoneBulge flex-item column" onclick="garnetClicked()">
+        <div id="garnet" class="gemstoneBulge flex-item column yoink">
           <img src="./Art/hand_paper.png" alt="" class="hand flex-item">
           <img src="./Art/garnet_gem.png" alt="" class="gemstone flex-item">
         </div>
-        <div class="gemstoneBulge flex-item column" onclick="olivineClicked()">
+        <div id="olivine" class="gemstoneBulge flex-item column yoink">
           <img src="./Art/hand_scissors.png" alt="" class="hand flex-item">
           <img src="./Art/olivine_gem.png" alt="" class="gemstone flex-item">
         </div>
@@ -111,7 +111,7 @@
     </div>  
    <h5 id="bottomBanner">© Ram 2022</h5>
 
-  
+   <script src="javascript.js"></script>
   </body>
   
 </html>

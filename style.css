@@ -6,9 +6,10 @@
   justify-content:center;
   padding: 20px;
   font-family: '60s Scoreboard', sans-serif;
-  font-size: 50%;
-                                                
+  font-size: 50%;                                             
 }
+
+
 
 .flex {
   display: flex;
@@ -316,8 +317,6 @@
   transform: translate3d(4px, 0, 0);
 }
 }
-
-
 
 /* INHERITED RULES */
 

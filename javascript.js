@@ -2,7 +2,7 @@ let computerChoice = "";
 let playerChoice = "";
 let gem = "";
 let roundStatus = "";
-
+let selected = "";
 
 
 function getComputerChoice() {
@@ -93,7 +93,6 @@ function resetInvisibility() {
     });
 }
 
-
 function callIt() {
     if (roundStatus === "TIE") {     
         let ties = document.querySelectorAll('.tie');
@@ -124,3 +123,82 @@ function callIt() {
         });     
     };
 } 
+
+
+//addBorders("div");
+function addBorders(divClass) {
+    console.log("running");
+    let selectedDivs = document.querySelectorAll(divClass);
+    let newArray = Array.from(selectedDivs);
+    console.log("borderAllDivs: " + newArray);
+    newArray.forEach((divClass) => {
+        console.log(divClass.style.border);
+        divClass.style.borderTop = "solid yellow";
+        divClass.style.borderBottom = "solid blue";
+        divClass.style.borderLeft = "solid lime";
+        divClass.style.borderRight = "solid red";
+    })
+}
+
+
+updateDivs(".yoink");
+function updateDivs(divClass) {
+    let selectedDivs = document.querySelectorAll(divClass);
+    let newArray = Array.from(selectedDivs);
+    console.log("updateDivs: " + newArray);
+    newArray.forEach((divClass) => {
+        let selected = divClass;
+        divClass.addEventListener('click', () => {
+            if (selected.id === "garnet") {
+                garnetClicked();
+            } else if (selected.id === pyroxine) {
+                pyroxineClicked();
+            } else {
+                olivineClicked();
+            }            
+        })
+        
+    })
+
+}
+
+/*
+
+updateDivs(".yoink");
+
+function updateDivs(divClass) {
+    let selectedDivs = document.querySelectorAll(divClass);
+    let newArray = Array.from(selectedDivs);
+    console.log(newArray);
+    for (let i = 0; i <= newArray.length; i++) {
+        let selected = newArray[i];
+        //selected.style.border = "solid blue";
+        selected.addEventListener('click', () => {           
+            if (selected.id === "garnet") {
+                garnetClicked();
+            } else if (selected.id === pyroxine) {
+                pyroxineClicked();
+            } else {
+                olivineClicked();
+            }
+        });
+    }
+}
+
+function addBorders(divClass) {
+    console.log("running");
+    let selectedDivs = document.querySelectorAll(divClass);
+    let newArray = Array.from(selectedDivs);
+    console.log("borderAllDivs: " + newArray);
+    for (let i = 0; i <= newArray.length; i++) {
+        let selected = newArray[i];
+        console.log(selected);
+        selected.style.borderTop = "solid yellow";
+        selected.style.borderBottom = "solid blue";
+        selected.style.borderLeft = "solid lime";
+        selected.style.borderRight = "solid red";
+    }
+    console.log("Finished!");
+}
+
+*/
